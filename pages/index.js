@@ -1,3 +1,7 @@
-export default function Home(props) {
-  return <div>넥스트 제이에스</div>;
+export default function Home() {
+  return (
+    <div>
+      <h1 className="active">Hello</h1>
+    </div>
+  );
 }
