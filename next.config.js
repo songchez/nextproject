@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const API_KEY = "389703edfca69df91d0efaa71a7a0762";
 const nextConfig = {
   reactStrictMode: true,
   async redirects() {
@@ -19,6 +20,6 @@ const nextConfig = {
     ];
   },
 };
-const API_KEY = "389703edfca69df91d0efaa71a7a0762";
+
 
 module.exports = nextConfig;
