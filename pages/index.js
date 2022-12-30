@@ -41,6 +41,7 @@ export default function Home({results}) {
   );
 }
 
+// 이걸 많이쓰면 쓸수록 서버사이드 랜더링이 되버린다. 자바스크립트가아니라 HTML이 되버리는 거다. 당신의 선택은?
 export async function getServerSideProps(){
   const { results } = await (await fetch(`http://localhost:3000/api/movies`)).json();
   return {
