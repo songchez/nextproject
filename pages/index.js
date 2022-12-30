@@ -12,7 +12,7 @@ export default function Home({results}) {
       {movies?.map((movie) => (
         <div className="movie" key={movie.id}>
           {/* <Image src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/> */}
-          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
+          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="posters"/>
           <h4>{movie.original_title}</h4>
         </div>
       ))}
@@ -20,7 +20,7 @@ export default function Home({results}) {
         .container {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          padding: 20px;
+          padding: 15px;
           gap: 20px;
         }
         .movie img {
