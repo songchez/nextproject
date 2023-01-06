@@ -1,8 +1,10 @@
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 export default function Detail() {
     const router = useRouter();
     console.log(router);
-    return "detail page";
-    
+    return (<div>
+        <h1>        {router.query.title}
+</h1>
+    </div>);    
 }

@@ -1,4 +1,4 @@
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Home({results}) {
@@ -7,7 +7,7 @@ export default function Home({results}) {
 
   useEffect(() => {
     setMovies(results)
-  }, []);
+  }, [results]);
 
   const ocPushid =(id, title)=>{
     router.push({
