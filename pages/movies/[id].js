@@ -1,7 +1,8 @@
 import { Router, useRouter } from "next/router";
 
-function Detail(props) {
+export default function Detail() {
     const router = useRouter();
-    return "detail page";
     console.log(router);
+    return "detail page";
+    
 }
