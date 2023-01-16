@@ -1,31 +1,41 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-export default function Home({results}) {
+export default function Home({ results }) {
   const [movies, setMovies] = useState([]);
   const router = useRouter();
 
   useEffect(() => {
-    setMovies(results)
+    setMovies(results);
   }, [results]);
 
-  const ocPushid =(id, title)=>{
-    router.push({
-      pathname: `/movies/${id}`,
-      query: {
-        title,
+  const ocPushid = (id, title) => {
+    router.push(
+      {
+        pathname: `/movies/${id}`,
+        query: {
+          title,
+        },
       },
-    },
-    `/movies/${id}`
+      `/movies/${id}`
     );
-  }
+  };
 
   return (
     <div className="container">
       {!movies && <h4>Loading...</h4>}
       {movies?.map((movie) => (
-        <div onClick={()=>{ocPushid(movie.id, movie.original_title)}} className="movie" key={movie.id}>
-          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="posters"/>
+        <div
+          onClick={() => {
+            ocPushid(movie.id, movie.original_title);
+          }}
+          className="movie"
+          key={movie.id}
+        >
+          <img
+            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+            alt="posters"
+          />
           <h4>{movie.original_title}</h4>
         </div>
       ))}
@@ -55,11 +65,13 @@ export default function Home({results}) {
 }
 
 // 이걸 많이쓰면 쓸수록 서버사이드 랜더링이 되버린다. 자바스크립트가아니라 HTML이 되버리는 거다. 당신의 선택은?
-export async function getServerSideProps(){
-  const { results } = await (await fetch(`http://localhost:3000/api/movies`)).json();
+export async function getServerSideProps() {
+  const { results } = await (
+    await fetch(`http://localhost:3000/api/movies`)
+  ).json();
   return {
-    props:{
+    props: {
       results,
-    }
-  }
+    },
+  };
 }
