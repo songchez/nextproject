@@ -3,9 +3,8 @@ import { useRouter } from "next/router";
 import NavBar from "../components/Navber";
 
 export default function Layout({ children }) {
-
-const obj = { '/': 'Home' , '/about' : 'About'}
-const router = useRouter();
+  const obj = { "/": "Home", "/about": "About" };
+  const router = useRouter();
 
   return (
     <>
