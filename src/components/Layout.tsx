@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import NavBar from "../components/Navber";
+import NavBar from "./Navber";
+import React from "react";
 
 export default function Layout({ children }) {
   const obj = { "/": "Home", "/about": "About" };

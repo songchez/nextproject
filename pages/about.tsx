@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Potato() {
   return (
     <div>
@@ -5,4 +7,4 @@ export default function Potato() {
     </div>
   );
 }
-qq
+qq;
